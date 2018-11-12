@@ -173,11 +173,11 @@ namespace GraficadorSeñales
             for (int n = 0; n < cantidadMuestrasResultado; n++)
             {
                 double valorMuestra = 0;
-                for (int k = 0; k < operando2.Muestras.Count; k++)
+                for (int m = 0; m < operando2.Muestras.Count; m++)
                 {
-                    if ((n - k) >= 0 && (n - k) < operando2.Muestras.Count)
+                    if ((m + n) >= 0 && (m + n) < operando2.Muestras.Count)
                     {
-                        valorMuestra += operando1.Muestras[k].Y * operando2.Muestras[n - k].Y;
+                        valorMuestra += operando1.Muestras[m].Y * operando2.Muestras[m + n].Y;
                     }
                 }
                 valorMuestra /= resultado.FrecuenciaMuestreo;
